@@ -198,6 +198,9 @@ func newConfig() *config {
 	// pprof profiler via HTTP
 	fs.BoolVar(&cfg.EnablePprof, "enable-pprof", false, "Enable runtime profiling data via HTTP server. Address is at client URL + \"/debug/pprof/\"")
 
+	// additional metrics
+	fs.BoolVar(&cfg.EnableGRPCTimeHistogram, "enable-grpc-time-histogram", false, "Enable Prometheus histogram metrics for time spent handling GRPC requests.")
+
 	// ignored
 	for _, f := range cfg.ignored {
 		fs.Var(&flags.IgnoredFlag{Name: f}, f, "")
