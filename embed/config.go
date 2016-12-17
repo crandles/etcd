@@ -112,9 +112,10 @@ type Config struct {
 
 	// debug
 
-	Debug        bool   `json:"debug"`
-	LogPkgLevels string `json:"log-package-levels"`
-	EnablePprof  bool
+	Debug                   bool   `json:"debug"`
+	LogPkgLevels            string `json:"log-package-levels"`
+	EnablePprof             bool
+	EnableGRPCTimeHistogram bool `json:"enable-grpc-time-histogram"`
 
 	// ForceNewCluster starts a new cluster even if previously started; unsafe.
 	ForceNewCluster bool `json:"force-new-cluster"`
